@@ -6,7 +6,7 @@
 	<!-- Change the group ID with the class group -->
     <groupId>b20b1789-b8db-4d23-aa8e-3bab79b23399</groupId>
     <artifactId>kk-rtf-unified-app</artifactId>
-    <version>2.3.0</version>
+    <version>2.3.1</version>
 	
     <packaging>mule-application</packaging>
     <name>kk-rtf-unified-app</name>
