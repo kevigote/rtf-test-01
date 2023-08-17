@@ -2,10 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+	
 	<!-- Change the group ID with the class group -->
     <groupId>b20b1789-b8db-4d23-aa8e-3bab79b23399</groupId>
     <artifactId>kk-rtf-unified-app</artifactId>
     <version>2.3.0</version>
+	
     <packaging>mule-application</packaging>
     <name>kk-rtf-unified-app</name>
 
@@ -246,9 +248,9 @@
 
     <repositories>
         <repository>
-            <id>anypoint-exchange-v2</id>
+            <id>anypoint-exchange-v3</id>
             <name>Anypoint Exchange</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+            <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
         </repository>
         <repository>
             <id>mulesoft-releases</id>
@@ -269,7 +271,7 @@
         <repository>
             <id>rtfk.repository</id>
             <name>Class Repository</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/${business.group.id}/maven</url>
+            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${business.group.id}/maven</url>
         </repository>
     </distributionManagement>
 </project>
