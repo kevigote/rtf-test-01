@@ -49,7 +49,7 @@ jobs:
                 "password": "${{ secrets.ANYPOINT_PASSWORD }}"
             },
             {
-                "id": "cloudhub-deploy",
+                "id": "rtfk.repository",
                 "username": "${{ secrets.ANYPOINT_USERNAME }}",
                 "password": "${{ secrets.ANYPOINT_PASSWORD }}"
             },
@@ -59,7 +59,7 @@ jobs:
               "password": "${{ secrets.ANYPOINT_PASSWORD }}"
             },
             {
-                "id": "releases-ee",
+                "id": "mulesoft-releases",
                 "username": "${{ secrets.RELEASES_USERNAME }}",
                 "password": "${{ secrets.RELEASES_PASSWORD }}"
             }
@@ -69,9 +69,6 @@ jobs:
       - name: Build
         run: mvn -B clean package --file pom.xml
         
-        
- #NEW CONTENT        
-
 
  # Step to upload the artifact to Exchange
   exchange:
@@ -94,12 +91,12 @@ jobs:
               "password": "${{ secrets.ANYPOINT_PASSWORD }}"
           },
           {
-              "id": "anypoint-exchange-v3-student-deployment",
+              "id": "rtfk.repository",
               "username": "${{ secrets.ANYPOINT_USERNAME }}",
               "password": "${{ secrets.ANYPOINT_PASSWORD }}"
           },
           {
-                "id": "releases-ee",
+                "id": "mulesoft-releases",
                 "username": "${{ secrets.RELEASES_USERNAME }}",
                 "password": "${{ secrets.RELEASES_PASSWORD }}"
             }]
@@ -107,7 +104,7 @@ jobs:
       run: |
         mvn -B clean deploy --file pom.xml
             
-# Steps for executing the deployment against Cloudhub2.0 Anypoint Platform
+# Steps for executing the deployment against RTF Anypoint Platform
   deploy:
     needs: exchange
     runs-on: ubuntu-latest
@@ -129,7 +126,7 @@ jobs:
               "password": "${{ secrets.ANYPOINT_PASSWORD }}"
           },
           {
-                "id": "cloudhub-deploy",
+                "id": "rtfk.repository",
                 "username": "${{ secrets.ANYPOINT_USERNAME }}",
                 "password": "${{ secrets.ANYPOINT_PASSWORD }}"
           }]
@@ -137,5 +134,5 @@ jobs:
       env:
         AUTHOR: "Mr Developer"
       run: |
-        mvn clean deploy --file pom.xml -DmuleDeploy -Dap.client_id="${{ secrets.AP_CLIENT_ID }}" -Dap.client_secret="${{ secrets.AP_CLIENT_SECRET }}"
+        mvn clean deploy --file pom.xml -DmuleDeploy -Dusername="${{ secrets.AP_USERNAME }}" -Dpassword="${{ secrets.AP_PASSWORD }}" -Drtf.app.name="auto-kk01" --Dapp.inbound.url="auto-kk01.mulesoft-training.com/*" -Ddeployment.target="rtf-kevin-00" 
  
