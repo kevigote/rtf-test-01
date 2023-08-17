@@ -134,5 +134,4 @@ jobs:
       env:
         AUTHOR: "Mr Developer"
       run: |
-        mvn clean deploy --file pom.xml -DmuleDeploy -Dusername="${{ secrets.AP_USERNAME }}" -Dpassword="${{ secrets.AP_PASSWORD }}" -Drtf.app.name="auto-kk01" -Dapp.inbound.url="auto-kk01.mulesoft-training.com/" -Ddeployment.target="rtf-kevin-00" 
- 
+        mvn clean deploy --file pom.xml -DmuleDeploy -Dusername="${{ secrets.ANYPOINT_USERNAME }}" -Dpassword="${{ secrets.ANYPOINT_PASSWORD }}" -Drtf.app.name="auto-kk01" -Dapp.inbound.url="http://auto-kk01.mulesoft-training.com/" -Ddeployment.target="rtf-kevin-00" 
