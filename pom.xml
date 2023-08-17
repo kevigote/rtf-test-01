@@ -3,11 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 	<!-- Change the group ID with the class group -->
-    <groupId>${business.group.id}</groupId>
-    <artifactId>rtf-unified-app</artifactId>
-    <version>2.2.0</version>
+    <groupId>b20b1789-b8db-4d23-aa8e-3bab79b23399</groupId>
+    <artifactId>kk-rtf-unified-app</artifactId>
+    <version>2.3.0</version>
     <packaging>mule-application</packaging>
-    <name>rtf-unified-app</name>
+    <name>kk-rtf-unified-app</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,7 +32,7 @@
         <password />
         <rtf.app.name>${project.artifactId}</rtf.app.name>
         <deployment.target />
-        <business.group.id>6a5e4e95-eb4f-4546-bc52-2418638083ba</business.group.id>
+        <business.group.id>b20b1789-b8db-4d23-aa8e-3bab79b23399</business.group.id>
         <app.inbound.url />
         <app.version>${project.version}</app.version>
         <api_id />
@@ -88,8 +88,8 @@
                     <runtimeFabricDeployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <muleVersion>${mule.version}</muleVersion>
-                        <username>${env.AP_UNAME}</username>
-                        <password>${env.AP_PASSW}</password>
+                        <username>${username}</username>
+                        <password>${password}</password>
                         <applicationName>${rtf.app.name}</applicationName>
                         <target>${deployment.target}</target>
                         <environment>Sandbox</environment>
